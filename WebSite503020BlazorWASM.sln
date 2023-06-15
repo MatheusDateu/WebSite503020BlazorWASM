@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite503020BlazorWASM.Server", "Server\WebSite503020BlazorWASM.Server.csproj", "{23C90ACF-B86A-4046-93F1-40BB37EAE52D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite503020BlazorWASM.Server", "Server\WebSite503020BlazorWASM.Server.csproj", "{23C90ACF-B86A-4046-93F1-40BB37EAE52D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite503020BlazorWASM.Client", "Client\WebSite503020BlazorWASM.Client.csproj", "{E097F4A6-95BE-4518-9828-2AA5F726C7F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite503020BlazorWASM.Client", "Client\WebSite503020BlazorWASM.Client.csproj", "{E097F4A6-95BE-4518-9828-2AA5F726C7F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite503020BlazorWASM.Shared", "Shared\WebSite503020BlazorWASM.Shared.csproj", "{E4265857-6510-4C99-A5FF-CF6591881B6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite503020BlazorWASM.Shared", "Shared\WebSite503020BlazorWASM.Shared.csproj", "{E4265857-6510-4C99-A5FF-CF6591881B6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
