@@ -2,6 +2,7 @@
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using WebSite503020BlazorWASM.Shared
+@using WebSite503020BlazorWASM.Client.PersonalsComponents;
 @attribute [Authorize]
 @inject HttpClient Http
 
@@ -9,14 +10,36 @@
 
 @if (isLoggedOn == true)
 {
-    <h1>Calculadora 50/30/20</h1>
-    <p>A regra 50/30/20 é uma forma simples de dividir seus gastos e equilibrar suas finanças apenas dividindo seu rendimento por categorias de despesas essenciais, pessoais e financeiras.</p>
-    <label>Rendimento líquido</label>
-    <input type="number" />
-    <details title="opa">Rendimento líquido é o valor total de dinheiro que você recebe todo mês, seja de forma ativa, passiva ou ambas</details>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="text-center display-4">Calculadora 50/30/20</h1>
+                <p class="text-center lead">A regra 50/30/20 é uma forma simples de dividir seus gastos e equilibrar suas finanças apenas dividindo seu rendimento por categorias de despesas essenciais, pessoais e financeiras.</p>
+
+                <div class="card mt-4 p-4">
+                    <h5 class="card-title text-center">Calcule sua distribuição</h5>
+
+                    <div class="form-group">
+                        <label for="inputRendimento">Rendimento líquido</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputRendimento" placeholder="0.00"
+                                   aria-describedby="rendimentoHelp" @bind="@myModel.InputValue" />
+                            <div class="input-group-append">
+                                <span class="input-group-text">BRL</span>
+                            </div>
+                        </div>
+                        <small id="rendimentoHelp" class="form-text text-muted">Insira o valor do rendimento líquido.</small>
+                    </div>
+
+                    <HowMightBeDistributedTable InputValue="@myModel.InputValue" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 }
-
-
 @code {
     private bool isLoggedOn;
 
@@ -30,5 +53,17 @@
         {
             exception.Redirect();
         }
+    }
+
+    private MyModel myModel = new MyModel();
+
+    private void HandleValidSubmit()
+    {
+        // Atualize a tabela com os novos valores
+    }
+
+    public class MyModel
+    {
+        public string? InputValue { get; set; }
     }
 }
