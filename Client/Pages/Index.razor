@@ -17,15 +17,18 @@
                 <p class="text-center lead">A regra 50/30/20 é uma forma simples de dividir seus gastos e equilibrar suas finanças apenas dividindo seu rendimento por categorias de despesas essenciais, pessoais e financeiras.</p>
 
                 <div class="card mt-4 p-4" style="background: linear-gradient(to right, #f15f79, #b24592);">
-                    <h5 class="card-title text-center">Calcule sua distribuição de renda</h5>
+                    <h5 class="card-title text-center text-white mb-4">Calcule sua distribuição de renda</h5>
 
                     <div class="form-group">
-                        <label for="inputRendimento">Rendimento líquido</label>
+                        <label for="inputRendimento" class="text-white">Rendimento líquido</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="inputRendimento" placeholder="0.00"
                                    aria-describedby="rendimentoHelp" @bind="@myModel.InputValue" />
                             <div class="input-group-append">
                                 <span class="input-group-text">BRL</span>
+                            </div>
+                            <div class="input-group-append">
+                                <span><button type="submit" class="btn btn-primary btn-block">Calcular</button></span>
                             </div>
                         </div>
                         <small id="rendimentoHelp" class="form-text text-muted">Insira o valor do rendimento líquido.</small>
@@ -37,6 +40,7 @@
             </div>
         </div>
     </div>
+
 
 
 }
