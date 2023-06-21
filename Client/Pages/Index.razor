@@ -22,8 +22,8 @@
                     <div class="form-group">
                         <label for="inputRendimento" class="text-white">Rendimento líquido</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="inputRendimento" placeholder="0.00"
-                                   aria-describedby="rendimentoHelp" @bind="@myModel.InputValue" />
+                            <input type="number" class="form-control" id="inputRendimento" placeholder="0.00"
+                                   aria-describedby="rendimentoHelp" @bind="@myModel.InputValue" @oninput="HandleInput" />
                             <div class="input-group-append">
                                 <span class="input-group-text">BRL</span>
                             </div>
@@ -33,16 +33,61 @@
                         </div>
                         <small id="rendimentoHelp" class="form-text text-muted">Insira o valor do rendimento líquido.</small>
                     </div>
-
                     <HowMightBeDistributedTable InputValue="@myModel.InputValue" />
-
                 </div>
+                <form class="card mt-4" style="background: linear-gradient(to right, #f15f79, #b24592);">
+                    <div class="card-header">
+                        <h1 class="text-center display-4">Custos Essenciais</h1>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputMoradia">Moradia</label>
+                                    <input type="number" class="form-control" id="inputMoradia" @bind="@myModel.Moradia" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputServicos">Serviços</label>
+                                    <input type="number" class="form-control" id="inputServicos" @bind="@myModel.Servicos" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputTransporte">Transporte</label>
+                                    <input type="number" class="form-control" id="inputTransporte" @bind="@myModel.Transporte" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputAlimentacao">Alimentação</label>
+                                    <input type="number" class="form-control" id="inputAlimentacao" @bind="@myModel.Alimentacao" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputSaude">Saúde</label>
+                                    <input type="number" class="form-control" id="inputSaude" @bind="@myModel.Saude" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEducacao">Educação</label>
+                                    <input type="number" class="form-control" id="inputEducacao" @bind="@myModel.Educacao" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary" @onclick="HandleValidSubmit">Calcular</button>
+                        </div>
+                    </div>
+                </form>
+
+
             </div>
         </div>
     </div>
-
-
-
 }
 @code {
     private bool isLoggedOn;
@@ -61,13 +106,24 @@
 
     private MyModel myModel = new MyModel();
 
+    private void HandleInput(ChangeEventArgs e)
+    {
+        myModel.InputValue = e.Value.ToString();
+    }
+
     private void HandleValidSubmit()
     {
-        // Atualize a tabela com os novos valores
+        
     }
 
     public class MyModel
     {
         public string? InputValue { get; set; }
+        public string Moradia { get; set; }
+        public string Servicos { get; set; }
+        public string Transporte { get; set; }
+        public string Alimentacao { get; set; }
+        public string Saude { get; set; }
+        public string Educacao { get; set; }
     }
 }

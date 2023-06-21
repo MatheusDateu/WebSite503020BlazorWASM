@@ -1,33 +1,37 @@
-﻿@if(InputValue == null || InputValue is null)
+﻿@if (InputValue == null || InputValue is null)
 {
-    
+
 }
 else
 {
     <table class="table table-bordered table-responsive">
         <thead class="table-primary">
             <tr>
+                <th scope="col">Tipo de Despesa</th>
                 <th scope="col">Percentagem</th>
                 <th scope="col">Valor</th>
             </tr>
         </thead>
         <tbody>
             <tr>
+                <td>Custos Essenciais</td>
                 <td>50%</td>
                 <td>@(Convert.ToDouble(InputValue) * 0.5)</td>
             </tr>
             <tr>
+                <td>Custos Pessoais</td>
                 <td>30%</td>
                 <td>@(Convert.ToDouble(InputValue) * 0.3)</td>
             </tr>
             <tr>
+                <td>Reserva Financeiras</td>
                 <td>20%</td>
                 <td>@(Convert.ToDouble(InputValue) * 0.2)</td>
             </tr>
         </tbody>
     </table>
-
 }
+
 
 @code {
     [Parameter]
