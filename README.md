@@ -32,11 +32,6 @@ This project leverages the following technologies to provide a robust and intera
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Font-Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=font-awesome&logoColor=white)
 
-## 📊 Repository Stats
-
-![Repository Stats](https://github-readme-stats.vercel.app/api?username=MatheusDateu&repo=WebSite503020BlazorWASM&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MatheusDateu&repo=WebSite503020BlazorWASM&layout=compact&theme=radical)
-
 ## 🎯 Usage
 
 1. **Enter Your Salary**: Input your monthly income to get started.
